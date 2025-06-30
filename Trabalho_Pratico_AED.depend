@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1751235869 source:c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\main.cpp
+	<iostream>
+	<limits>
+	"Local.h"
+	"Veiculo.h"
+	"Pedido.h"
+
+1751240423 c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\local.h
+	<cstddef>
+
+1751243483 c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\pedido.h
+	"Local.h"
+
+1751242912 c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\veiculo.h
+	"Local.h"
+
+1751244950 source:c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\local.cpp
+	"Local.h"
+	<cstring>
+	<cstdio>
+
+1751244912 source:c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\veiculo.cpp
+	"Veiculo.h"
+	<cstring>
+	<iostream>
+
+1751244982 source:c:\users\andre\onedrive\documentos\projetos puc\aed\trabalho_pratico_aed\pedido.cpp
+	"Pedido.h"
+	<cstring>
+
