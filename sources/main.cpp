@@ -13,10 +13,11 @@ int main()
 
     do
     {
-        cout << "\n=== Selecione a seção ==="
+        cout << "\n=== Selecione a seÃ§Ã£o ==="
              << "\n1. Local"
-             << "\n2. Veículo"
+             << "\n2. VeÃ­culo"
              << "\n3. Pedido"
+             << "\n4. Dados"
              << "\n0. Sair"
              << "\nEscolha: ";
         cin >> secao;
@@ -61,7 +62,7 @@ int main()
                     cout << "Coord Y do local a excluir: ";
                     cin >> y;
                     Local::excluirLocal(x, y);
-                    cout << "Local excluído se encontrado.\n";
+                    cout << "Local excluÃ­do se encontrado.\n";
                     break;
                 }
                 case 3:
@@ -87,7 +88,7 @@ int main()
                 case 0:
                     break;
                 default:
-                    cout << "Opção inválida!\n";
+                    cout << "OpÃ§Ã£o invÃ¡lida!\n";
                 }
             }
             while (opc != 0);
@@ -98,10 +99,10 @@ int main()
             int opc;
             do
             {
-                cout << "\n--- Menu Veículo ---"
-                     << "\n1. Adicionar Veículo"
-                     << "\n2. Excluir Veículo"
-                     << "\n3. Listar Veículos"
+                cout << "\n--- Menu VeÃ­culo ---"
+                     << "\n1. Adicionar VeÃ­culo"
+                     << "\n2. Excluir VeÃ­culo"
+                     << "\n3. Listar VeÃ­culos"
                      << "\n0. Voltar"
                      << "\nEscolha: ";
                 cin >> opc;
@@ -117,28 +118,28 @@ int main()
                     cout << "Informe modelo: ";
                     cin.getline(modelo, sizeof(modelo));
 
-                    // Seleção de local usando função utilitária
+                    // SeleÃ§Ã£o de local usando funÃ§Ã£o utilitÃ¡ria
                     infoLocal infoOrigem;
                     if (!escolherLocal(infoOrigem))
                     {
-                        cout << "Não há locais cadastrados para escolha.\n";
+                        cout << "NÃ£o hÃ¡ locais cadastrados para escolha.\n";
                         break;
                     }
                     Local locOrigem(infoOrigem.nomerua, infoOrigem.coordx, infoOrigem.coordy);
 
-                    cout << "Disponível? (1=sim/0=não): ";
+                    cout << "DisponÃ­vel? (1=sim/0=nÃ£o): ";
                     cin >> disponivel;
                     Veiculo::adicionarVeiculo(placa, modelo, locOrigem, disponivel);
-                    cout << "Veículo adicionado.\n";
+                    cout << "VeÃ­culo adicionado.\n";
                     break;
                 }
                 case 2:
                 {
                     char placa[10];
-                    cout << "Informe placa do veículo a excluir: ";
+                    cout << "Informe placa do veÃ­culo a excluir: ";
                     cin.getline(placa, sizeof(placa));
                     Veiculo::excluirVeiculo(placa);
-                    cout << "Veículo excluído se encontrado.\n";
+                    cout << "VeÃ­culo excluÃ­do se encontrado.\n";
                     break;
                 }
                 case 3:
@@ -147,19 +148,19 @@ int main()
                     InfoVeiculo* veiculos = Veiculo::listarTodosVeiculos(totalVeiculos);
                     if (veiculos && totalVeiculos > 0)
                     {
-                        cout << "\n== Lista de Veículos ==\n";
+                        cout << "\n== Lista de VeÃ­culos ==\n";
                         for (int i = 0; i < totalVeiculos; ++i)
                         {
                             cout << "Placa: " << veiculos[i].placa << endl;
                             cout << "Modelo: " << veiculos[i].modelo << endl;
-                            cout << "Disponível: " << (veiculos[i].disponivel ? "Sim" : "Não") << endl;
+                            cout << "DisponÃ­vel: " << (veiculos[i].disponivel ? "Sim" : "NÃ£o") << endl;
                             cout << "Local: " << veiculos[i].local << endl;
                             cout << "--------------------------\n";
                         }
                     }
                     else
                     {
-                        cout << "Nenhum veículo encontrado.\n";
+                        cout << "Nenhum veÃ­culo encontrado.\n";
                     }
                     delete[] veiculos;
                     break;
@@ -167,7 +168,7 @@ int main()
                 case 0:
                     break;
                 default:
-                    cout << "Opção inválida!\n";
+                    cout << "OpÃ§Ã£o invÃ¡lida!\n";
                 }
             }
             while (opc != 0);
@@ -193,20 +194,20 @@ int main()
                 {
                     float peso;
 
-                    // Seleção de origem
+                    // SeleÃ§Ã£o de origem
                     infoLocal infoOrig;
                     if (!escolherLocal(infoOrig))
                     {
-                        cout << "Não há locais cadastrados para origem.\n";
+                        cout << "NÃ£o hÃ¡ locais cadastrados para origem.\n";
                         break;
                     }
                     Local orig(infoOrig.nomerua, infoOrig.coordx, infoOrig.coordy);
 
-                    // Seleção de destino
+                    // SeleÃ§Ã£o de destino
                     infoLocal infoDest;
                     if (!escolherLocal(infoDest))
                     {
-                        cout << "Não há locais cadastrados para destino.\n";
+                        cout << "NÃ£o hÃ¡ locais cadastrados para destino.\n";
                         break;
                     }
                     Local dest(infoDest.nomerua, infoDest.coordx, infoDest.coordy);
@@ -223,7 +224,7 @@ int main()
                     cout << "Informe ID do pedido a excluir: ";
                     cin >> id;
                     Pedido::excluirPedido(id);
-                    cout << "Pedido excluído se encontrado.\n";
+                    cout << "Pedido excluÃ­do se encontrado.\n";
                     break;
                 }
                 case 3:
@@ -249,22 +250,51 @@ int main()
                     break;
                 }
                 case 4:
-                    cout << "Calcular Rotas não implementado.\n";
+                    cout << "Calcular Rotas nÃ£o implementado.\n";
                     break;
                 case 0:
                     break;
                 default:
-                    cout << "Opção inválida!\n";
+                    cout << "OpÃ§Ã£o invÃ¡lida!\n";
                 }
             }
             while (opc != 0);
             break;
         }
+        case 4:
+                {
+                    int opc;
+                    do
+                    {
+                        cout << "\n--- Menu Dados ---"
+                             << "\n1. Salvar Dados"
+                             << "\n2. Restaurar Dados"
+                             << "\n0. Voltar"
+                             << "\nEscolha: ";
+                        cin >> opc;
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                        switch (opc)
+                        {
+                        case 1:
+                            cout << "Salvando dados...\n";
+                            break;
+                        case 2:
+                            cout << "Realizando backup...\n";
+                            // aqui vocÃª chamaria a funÃ§Ã£o FazerBackup();
+                            break;
+                        case 0:
+                            // volta para o menu principal
+                            break;
+                        default:
+                            cout << "OpÃ§Ã£o invÃ¡lida!\n";
+                        }
+                    }
         case 0:
             cout << "Saindo...\n";
             break;
         default:
-            cout << "Seção inválida!\n";
+            cout << "SeÃ§Ã£o invÃ¡lida!\n";
         }
     }
     while (secao != 0);
